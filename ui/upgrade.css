@@ -1,0 +1,41 @@
+/* KIDS PRO UPGRADE */
+:root{--space-1:.375rem;--space-2:.75rem;--space-3:1rem;--space-4:1.25rem;--radius-xl:16px;--shadow-1:0 6px 16px rgba(0,0,0,.15);--brand-1:#6c5ce7;--brand-2:#00d2d3;--ok:#2ecc71;--warn:#e67e22;--danger:#e74c3c;--text-strong:#1a1a1a;--text-muted:#4b5563;--focus:#111827;}
+*{box-sizing:border-box;}
+body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,Inter,"Noto Sans",sans-serif;color:var(--text-strong);-webkit-tap-highlight-color:transparent;} /* KIDS PRO UPGRADE */
+button,.button{min-height:48px;padding:.75rem 1.25rem;border-radius:16px;border:0;font-weight:700;letter-spacing:.25px;box-shadow:0 6px 16px rgba(0,0,0,.15);transition:transform .12s ease,opacity .12s ease;outline:none;}
+button:focus-visible{outline:3px solid var(--brand-2);outline-offset:2px;} /* KIDS PRO UPGRADE */
+.btn-primary{background:linear-gradient(135deg,var(--brand-1),#8a7cf0);color:#fff;}
+.btn-secondary{background:linear-gradient(135deg,#0ea5e9,var(--brand-2));color:#072b35;}
+button:active{transform:scale(.98);} /* KIDS PRO UPGRADE */
+.toolbar,.panel,.popup{background:#fff;border-radius:16px;box-shadow:0 6px 16px rgba(0,0,0,.15);padding:1rem;}
+/* KIDS PRO UPGRADE: timer styles removed */
+/* KIDS PRO UPGRADE: timer styles removed */
+.hidden{display:none!important;}
+@media(min-width:768px){.toolbar{padding:1.25rem;}}
+#time,#timer{display:none;} /* KIDS PRO UPGRADE: hide duplicate text timer */
+
+
+/* KIDS PRO UPGRADE: Circular timer styles */
+.timer-circle{
+  position:relative; width:120px; height:120px; margin:10px auto;
+}
+.timer-ring{ transform: rotate(-90deg); width:120px; height:120px; }
+.timer-ring__bg{
+  fill: none; stroke: #e5e7eb; stroke-width: 10; opacity:.65;
+}
+.timer-ring__fg{
+  fill:none; stroke: url(#timerGrad); stroke-width: 10; stroke-linecap: round;
+  stroke-dasharray: 339.292; /* 2 * PI * r (r=54) */ 
+  stroke-dashoffset: 0;
+  transition: stroke-dashoffset .2s linear;
+}
+/* gradient definition via CSS not supported in SVG directly; we'll set stroke via JS to a solid */
+.timer-center{
+  position:absolute; inset:0; display:grid; place-items:center; pointer-events:none;
+}
+.timer-label{
+  font-weight:800; font-size:20px; color:#111827;
+}
+@media (prefers-color-scheme: dark){
+  .timer-label{ color:#f9fafb; }
+}
